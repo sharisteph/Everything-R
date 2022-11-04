@@ -1,0 +1,25 @@
+---
+title: "GGPLOT RMD FILE"
+author: "stephanie"
+date: "2022-10-31"
+output: html_document
+---
+
+#CREATE GGPLOT USING PENGUIN DATA
+
+
+##Install r packages
+notes: setting r environment by installing and loading `ggplot2` and `palmerpenguins`
+```{r loading packages}
+library(ggplot2)
+library(palmerpenguins)
+penguins <- read.csv(path_to_file("penguins.csv"))
+```
+
+
+#create scatter plot
+notes: create a scatter plot of flipper length verses body mass
+```{r}
+ggplot(data=penguins)+
+  geom_point(mapping=aes(x=flipper_length_mm,y=body_mass_g,color=species))
+```
